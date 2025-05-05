@@ -1,7 +1,6 @@
 # 🎬 Movie Search App
 
-A sleek and responsive movie search app built with **React**. Search for movies using the [OMDb API](https://www.omdbapi.com/) and browse results in a beautifully styled interface.
-
+A sleek and responsive movie search app built with **React**. Search for movies and browse results.
 ---
 
 ## 🚀 Getting Started
