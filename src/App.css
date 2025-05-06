@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600,700,900");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-roboto: "Roboto Slab", serif;
+    --font-raleway: "Raleway", sans-serif;
+    --color-bg: #1b1f22;
+    --color-accent: #f9d3b4;
+    --color-primary: #282c34;
+    --color-text-light: #e0e0e0;
+    --glass-blur: blur(10px);
+}
+
+body {
+    font-family: var(--font-roboto);
+    background: radial-gradient(ellipse at top left, #1b1f22 0%, #111 100%);
+    color: var(--color-text-light);
+    min-height: 100vh;
+}
+
+.app {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: var(--font-raleway);
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.search {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 1rem 1.5rem;
+    backdrop-filter: var(--glass-blur);
+    margin: 2rem 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    font-size: 1.25rem;
+    background: transparent;
+    color: var(--color-text-light);
+    outline: none;
+    font-family: var(--font-raleway);
+    font-weight: 500;
+}
+
+.search img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.search img:hover {
+    transform: scale(1.2);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.movie {
+    width: 300px;
+    height: 460px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--color-primary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.movie div:nth-of-type(2) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: filter 0.3s ease;
+}
+
+.movie:hover div:nth-of-type(2) img {
+    filter: brightness(0.5);
+}
+
+.movie div:nth-of-type(3) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(34, 34, 34, 0.85);
+    padding: 1rem;
+    transition: background 0.3s ease;
+}
+
+.movie div:nth-of-type(3) span {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+.movie div:nth-of-type(3) h3 {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    color: var(--color-accent);
+}
+
+.empty {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.empty h1 {
+    font-size: 1.5rem;
+    color: #ff9a9e;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .search {
+        padding: 0.75rem 1rem;
+    }
+
+    .search input {
+        font-size: 1rem;
+    }
+
+    .movie {
+        width: 90%;
+    }
+}
